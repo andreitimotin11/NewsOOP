@@ -5,6 +5,19 @@
  * Date: 04.12.2016
  * Time: 19:23
  */
+require_once __DIR__ . "/../classes/DB.php";
+
+
+class News{
+	public $id;
+	public $title;
+	public $text;
+	public static function getAll(){
+		$db = new DB;
+		return $db->query("SELECT * FROM news", "News");
+	}
+}
+/*
 class DataBase{
 	public $host = "127.0.0.1";
 	public $user = "root";
@@ -17,13 +30,6 @@ class DataBase{
 	function query($sql){
 		return mysql_query($sql);
 	}
-	
-}
-class News{
-	public $title;
-	public $author;
-	public $text;
-	public $date;
 
 }
 function newsGetAll(){
@@ -33,3 +39,4 @@ function newsGetAll(){
 	$items = mysql_fetch_assoc($res);
 	return $items;
 }
+*/
