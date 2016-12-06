@@ -16,6 +16,8 @@ class NewsController
 		include __DIR__ . "/../views/news/all.php";
 	}
 	public function actionOne(){
+		echo "action1";
+		die();
 		$id = $_GET['id'];
 		$item = News::getOne();
 		include __DIR__ . "/../views/news/one.php";
