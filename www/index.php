@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * Created by PhpStorm.
  * User: Andrei
  * Date: 04.12.2016
@@ -10,3 +10,11 @@
 5.2. Страница конкретной новости
 5.3. Форма добавления новости на сайт
  */
+
+require_once __DIR__ . "/model/news.php";
+
+$items = newsGetAll();
+var_dump($items);
+//include __DIR__ . "oneNews.php";
+echo "1";
+//require_once __DIR__ . "view/main.php";
