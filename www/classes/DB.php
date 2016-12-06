@@ -12,7 +12,7 @@ class DB{
 		}
 		$ret = array();
 		while ($row = mysql_fetch_object($res, $class)){
-			$ret = $row;
+			$ret[] = $row;
 		}
 		return $ret;
 	}
