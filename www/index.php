@@ -11,9 +11,6 @@
 5.3. Форма добавления новости на сайт
  */
 
-require_once __DIR__ . "/models/News.php";
-
-$items = News::getAll();
-
-include __DIR__ . "views/index.php";
-var_dump($items);
+require_once __DIR__ . "/controllers/NewsController.php";
+$controller = new NewsController();
+$controller->actionAll();

@@ -10,7 +10,7 @@ class DB{
 		if(false ===$res){
 			return false;
 		}
-		$ret = [];
+		$ret = array();
 		while ($row = mysql_fetch_object($res, $class)){
 			$ret = $row;
 		}
