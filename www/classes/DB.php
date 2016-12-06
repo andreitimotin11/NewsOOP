@@ -16,7 +16,14 @@ class DB{
 		}
 		return $ret;
 	}
-	public function queryOne(){
-
+	public function queryOne($sql, $class = "stdClass"){
+		$res = mysql_query($sql);
+		if(false ===$res){
+			return false;
+		}
+		$ret = array();
+		while ($row = mysql_fetch_object($res, $class)){
+			$ret[] = $row;
+		}
 	}
 }
