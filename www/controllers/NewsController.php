@@ -7,7 +7,6 @@
  * Time: 18:09
  */
 
-require_once __DIR__ . "/../models/News.php";
 
 class NewsController
 {
