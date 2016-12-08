@@ -11,6 +11,9 @@ class NewsController
 	public function actionAll()
 	{
 		$items = News::getAll();
+		$view = new View();
+		$view->assign('items', $items);
+		$view->display("news/all.php");
 		include __DIR__ . "/../views/news/all.php";
 	}
 	
