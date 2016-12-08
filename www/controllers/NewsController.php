@@ -15,6 +15,7 @@ class NewsController
 		//$view->assign('items', $news);
 		$view->items = $news;
 		$view->display("news/all.php");
+		
 	}
 	
 	public function actionOne()
