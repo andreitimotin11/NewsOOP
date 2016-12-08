@@ -7,7 +7,6 @@
  */
 require_once __DIR__ . "/../classes/DB.php";
 
-
 class News{
 	public $id;
 	public $title;

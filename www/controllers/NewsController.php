@@ -7,7 +7,6 @@
  * Time: 18:09
  */
 
-
 class NewsController
 {
 	public function actionAll(){
