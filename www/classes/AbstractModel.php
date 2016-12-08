@@ -12,5 +12,6 @@ abstract class AbstractModel
 	public static function getAll(){
 		$db = new DB;
 		return $db->queryAll("SELECT * FROM " . self::$table . ", News");
+		
 	}
 }
