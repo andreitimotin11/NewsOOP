@@ -12,7 +12,6 @@ class NewsController
 	{
 		$news = News::getAll();
 		$view = new View();
-		//$view->assign('items', $news);
 		$view->items = $news;
 		$view->display("news/all.php");
 		
