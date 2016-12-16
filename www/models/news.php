@@ -1,6 +1,6 @@
 <?php
 
-/**
+/*
  * Created by PhpStorm.
  * User: Andrei
  * Date: 04.12.2016
