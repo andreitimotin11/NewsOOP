@@ -14,7 +14,7 @@ class NewsController
 		$view = new View();
 		$view->items = $news;
 
-		$view->display("news/all.php");		
+		echo $view->display("news/all.php");
 	}
 	
 	public function actionOne()
@@ -23,6 +23,6 @@ class NewsController
 		$item = News::getOne($id);
 		$view = new View();
 		$view->assign('items', $item);
-		$view->display("news/one.php");
+		$view->render("news/one.php");
 	}
 }
