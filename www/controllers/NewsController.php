@@ -13,9 +13,7 @@ class NewsController
 		$news = News::getAll();
 		$view = new View();
 		$view->items = $news;
-		echo count($view);
-		die();
-
+		
 		foreach ($view as $k => $v) {
 			echo $k . " " . $v;
 		}
