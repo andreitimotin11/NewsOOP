@@ -15,10 +15,10 @@ class NewsController
 		$view->items = $news;
 
 		foreach ($view as $k => $v) {
-			echo $k;
+			echo $k . " " . $v;
 		}
-		$view->display("news/all.php");
-		
+		die();
+		$view->display("news/all.php");		
 	}
 	
 	public function actionOne()
@@ -28,6 +28,5 @@ class NewsController
 		$view = new View();
 		$view->assign('items', $item);
 		$view->display("news/one.php");
-
 	}
 }
