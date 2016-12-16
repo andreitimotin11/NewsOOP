@@ -13,6 +13,10 @@ class NewsController
 		$news = News::getAll();
 		$view = new View();
 		$view->items = $news;
+
+		foreach ($view as $k => $v) {
+			echo $k;
+		}
 		$view->display("news/all.php");
 		
 	}
