@@ -13,4 +13,5 @@ abstract class AbstractModel
 	public static function getTable(){
 		return self::$table;
 	}
+	
 }
