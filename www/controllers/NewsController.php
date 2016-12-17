@@ -4,7 +4,8 @@ class NewsController
 
 	public function actionAll()
 	{
-		echo NewsModel::getTable();
+		$db = new DB();
+		die();
 		/*
 		$news = News::getAll();
 		$view = new View();

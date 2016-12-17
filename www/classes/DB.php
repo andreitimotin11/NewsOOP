@@ -4,8 +4,8 @@ class DB
 {
 	public function __construct()
 	{
-		mysql_connect("localhost", "root", '');
-		mysql_select_db('GB_News');
+
+		$dbh = new PDO("mysql:dbname=GB_News;host=localhost", "root","");
 	}
 	
 	public function queryAll($sql, $class = 'stdClass')
