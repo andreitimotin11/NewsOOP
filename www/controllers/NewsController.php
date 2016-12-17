@@ -30,4 +30,5 @@ class NewsController
 		$view->assign('items', $item);
 		$view->render("news/one.php");
 	}
+	
 }

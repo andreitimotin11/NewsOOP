@@ -9,6 +9,16 @@
 
 abstract class AbstractModel
 {
+	protected $data = [];
+
+	public function __set($k, $v)
+	{
+		$this->data[$k] = $v;
+	}
+	public function __get($k)
+	{
+		return $this->data[$k];
+	}
 
 	static protected $table;
 
@@ -26,7 +36,16 @@ abstract class AbstractModel
 	{
 		$sql = 'SELECT * FROM ' . static::$table . ' WHERE id=:id';
 		$db = new DB();
-		return $db->query($sql, [':id' => $id]);
+		return $db->query($sql, [':id' => $id])[0];
+	}
+
+
+	public function insert()
+	{
+		$cols = array_keys($this->data);
+		var_dump($cols);
+
+		$sql = 'INSERT INTO ' . static::$table . ' () VALUES ()';
 	}
 
 }
