@@ -18,6 +18,7 @@ abstract class AbstractModel
 		$class = get_called_class();
 		$sql = 'SELECT * FROM ' . static::$table;
 		$db = new DB();
+		$db->setClassName($class);
 		return $db->query($sql);
 	}
 
