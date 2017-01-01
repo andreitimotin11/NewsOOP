@@ -39,10 +39,21 @@ abstract class AbstractModel
 
 	public static function findOneByPk($id)
 	{
+        $class = get_called_class();
 		$sql = 'SELECT * FROM ' . static::$table . ' WHERE id=:id';
 		$db = new DB();
+        $db->setClassName($class);
 		return $db->query($sql, [':id' => $id])[0];
 	}
+
+	public function findOneByColumn($column, $value){
+        $db = new DB();
+        $db->setClassName(get_called_class());
+        $sql = 'SELECT * FROM ' . static::$table . ' WHERE value=:value';
+        return $db->query($sql, [':value' => $value])[0];
+    }
+
+    }
 
 
 	public function insert()
