@@ -43,9 +43,14 @@ abstract class AbstractModel
 	public function insert()
 	{
 		$cols = array_keys($this->data);
-		var_dump($cols);
-
-		$sql = 'INSERT INTO ' . static::$table . ' () VALUES ()';
+		//var_dump($cols);
+        echo
+		$sql = '
+          INSERT INTO ' . static::$table . ' 
+          (' . implode(', ', $cols) . ')
+          VALUES 
+          ()
+          ';
 	}
 
 }
