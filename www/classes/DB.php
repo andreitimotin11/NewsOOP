@@ -31,30 +31,4 @@ class DB
         return $sth->execute($params);
 
     }
-	/*
-	public function queryAll($sql, $class = 'stdClass')
-	{
-		$res = mysql_query($sql);
-		if (false === $res) {
-			return false;
-		}
-		$ret = array();
-		while ($row = mysql_fetch_object($res, $class)) {
-			$ret[] = $row;
-		}
-		return $ret;
-	}
-	
-	public function queryOne($sql, $class = "stdClass")
-	{
-		$res = mysql_query($sql);
-		if (false === $res) {
-			return false;
-		}
-		while ($row = mysql_fetch_object($res, $class)) {
-			$ret = $row;
-		}
-		return $ret;
-	}
-	*/
 }

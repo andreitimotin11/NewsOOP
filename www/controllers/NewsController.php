@@ -10,11 +10,11 @@ class NewsController
 		$article->insert();
 
         $db = new DB();
-/*
+
         $res = $db->query('SELECT * FROM news WHERE id=:id',
                           [':id' => 2]);
-      //var_dump($res);
-        /*
+        var_dump($res);
+  /*
         $news = News::getAll();
         $view = new View();
         $view->items = $news;
