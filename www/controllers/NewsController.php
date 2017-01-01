@@ -4,21 +4,17 @@ class NewsController
 
 	public function actionAll()
 	{
-        var_dump(
-            NewsModel::findOneByPk(2)
-        );
-        die;
-		$article = new NewsModel();
+        $article = new NewsModel();
 		$article->title = 'Privet!';
 		$article->text = 'Privet MIR!';
 		$article->insert();
-
+        var_dump(isset($article->title));
         $db = new DB();
 
         $res = $db->query('SELECT * FROM news WHERE id=:id',
                           [':id' => 2]);
         /*
-        var_dump($res);
+
            $news = News::getAll();
            $view = new View();
            $view->items = $news;

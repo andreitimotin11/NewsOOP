@@ -20,7 +20,12 @@ abstract class AbstractModel
 		return $this->data[$k];
 	}
 
-	static protected $table;
+	public function __isset($k)
+    {
+        return isset($this->data[$k]);
+    }
+
+    static protected $table;
 
 
 	public static function findAll()
@@ -43,7 +48,7 @@ abstract class AbstractModel
 	public function insert()
 	{
 		$cols = array_keys($this->data);
-		$data = [];
+		//$data = [];
         foreach ($cols as $col) {
             $ins[] = ":" . $col;
             $data[':' . $col] = $this->data[$col];
