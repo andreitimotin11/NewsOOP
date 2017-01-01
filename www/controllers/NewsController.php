@@ -4,22 +4,23 @@ class NewsController
 
 	public function actionAll()
 	{
-		var_dump(
-			NewsModel::findAll()
-		);
-		die;
-		$db = new DB();
+		$article = new NewsModel();
+		$article->title = 'Privet!';
+		$article->text = 'Privet MIR!';
+		$article->insert();
 
-		$res = $db->query('SELECT * FROM news WHERE id=:id',
-		                  [':id' => 2]);
-		//var_dump($res);
-		/*
-		$news = News::getAll();
-		$view = new View();
-		$view->items = $news;
+        $db = new DB();
+/*
+        $res = $db->query('SELECT * FROM news WHERE id=:id',
+                          [':id' => 2]);
+      //var_dump($res);
+        /*
+        $news = News::getAll();
+        $view = new View();
+        $view->items = $news;
 
-		echo $view->display("news/all.php");
-		*/
+        echo $view->display("news/all.php");
+        */
 	}
 
 	public function actionOne()
