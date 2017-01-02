@@ -51,7 +51,7 @@ abstract class AbstractModel
         $db->setClassName(get_called_class());
         $sql = 'SELECT * FROM ' . static::$table . ' WHERE ' . $column . '=:value';
         $res = $db->query($sql, [':value' => $value]);
-        if(false !== $res)
+        if(!empty($res))
             return $res[0];
     return false;
 }
