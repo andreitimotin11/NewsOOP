@@ -72,6 +72,7 @@ abstract class AbstractModel
           ';
         $db = new DB();
         $db->execute($sql, $data);
+        $this->id = $db->lastInsertId();
     }
 
 }
