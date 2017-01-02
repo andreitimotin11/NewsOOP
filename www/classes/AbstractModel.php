@@ -74,5 +74,18 @@ abstract class AbstractModel
         $db->execute($sql, $data);
         $this->id = $db->lastInsertId();
     }
+    public function update(){
+	    $cols = [];
+        foreach ($this->data as $k => $v) {
+            if('id' == $k) continue;
+            $cols = $k . '=:' . $k;
+        }
+        var_dump($cols);die;
+	    $sql = '
+	        UPDATE ' . static::$table . '
+	        SET ' .implode(', ', $cols) . '
+	        WHERE id=:id
+	    ';
+    }
 
 }

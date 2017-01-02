@@ -4,12 +4,16 @@ class NewsController
 
 	public function actionAll()
 	{
+	    $art = NewsModel::findOneByColumn('title', 'Privet');
+	    $art->title = "New Header";
+	    $art->update();
+        die;
         $art = new NewsModel();
         $art->title = 'Privet';
         $art->text = 'Privet mir!';
         $art->insert();
         var_dump($art->id);
-        die;
+
         $article = new NewsModel();
         $article->title = 'rPrivet m';
 		$article->text = 'Privet mir!';
