@@ -86,6 +86,8 @@ abstract class AbstractModel
 	        SET ' .implode(', ', $cols) . '
 	        WHERE id=:id
 	    ';
+	    echo $sql;
+	    die;
     }
 
 }
